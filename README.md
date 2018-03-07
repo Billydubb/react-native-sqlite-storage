@@ -253,7 +253,7 @@ Modify you openDatabase call in your application adding createFromLocation param
   // default - if your folder is called www and data file is named the same as the dbName - testDB in this example
   2.SQLite.openDatabase({name : "testDB", createFromLocation : "~data/mydbfile.sqlite"}, okCallback,errorCallback);
   // if your folder is called data rather than www or your filename does not match the name of the db
-  3.SQLite.openDatabase({name : "testDB", createFromLocation : "/data/mydbfile.sqlite"}, okCallback,errorCallback);
+  3.SQLite.openDatabase({name : "testDB", createFromLocation : "/data/mydbfile.sqlite", location: 'Documents'}, okCallback,errorCallback);
   // if your folder is not in app bundle but in app sandbox i.e. downloaded from some remote location.
   ...
 
@@ -313,7 +313,7 @@ SQLite.openDatabase({name : "testDB", createFromLocation : "~data/mydbfile.sqlit
 Use this flavor of openDatabase call if your folder is not in application bundle but in app sandbox i.e. downloaded from some remote location. In this case the source file is located in data subdirectory of Documents location (iOS) or FilesDir (Android).
 
 ```js
-SQLite.openDatabase({name : "testDB", createFromLocation : "/data/mydbfile.sqlite"}, okCallback,errorCallback);
+SQLite.openDatabase({name : "testDB", createFromLocation : "/data/mydbfile.sqlite", location: 'Documents'}, okCallback,errorCallback);
 ```
 
 ## Additional options for pre-populated database file
